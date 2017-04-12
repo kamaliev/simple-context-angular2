@@ -21,6 +21,7 @@ import {SimpleContext} from './simple-context';
             -webkit-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.4);
             -moz-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.4);
             box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.4);
+            z-index: 999;
         }
 
         .context ul {
