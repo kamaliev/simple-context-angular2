@@ -69,8 +69,8 @@ export class AppComponent {
 
     constructor() {
         this.menuItems = [
-            { title: 'Save', event: this.onSave },
-            { title: 'Edit', event: this.onSave }
+            { title: 'Save', event: item => this.onSave(item) },
+            { title: 'Edit', event: item => this.onSave(item) }
         ];
 
         this.groups = [
