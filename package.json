@@ -24,6 +24,17 @@
     "url": "https://github.com/kamaliev/simple-context-angular2/issues"
   },
   "homepage": "https://github.com/kamaliev/simple-context-angular2#readme",
+  "keywords": [
+    "simple context ng2",
+    "simple context angular2",
+    "simple-context-ng2",
+    "simple-context-angular2",
+    "context ng2",
+    "context-ng2",
+    "context angular2",
+    "context-angular2"
+  ],
+  "author": "mac0eb",
   "private": true,
   "dependencies": {},
   "devDependencies": {
@@ -46,5 +57,11 @@
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",
     "typescript": "~2.2.0"
-  }
+  },
+  "files": [
+    "dist/"
+  ],
+  "pre-commit": [
+    "tslint"
+  ]
 }
