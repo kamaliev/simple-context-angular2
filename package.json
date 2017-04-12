@@ -16,6 +16,14 @@
     "prepublish": "npm run tslint && npm run build-dist",
     "tslint": "tslint ./src/app/simple-context/*.ts -t verbose"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamaliev/simple-context-angular2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kamaliev/simple-context-angular2/issues"
+  },
+  "homepage": "https://github.com/kamaliev/simple-context-angular2#readme",
   "private": true,
   "dependencies": {},
   "devDependencies": {

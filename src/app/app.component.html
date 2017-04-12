@@ -1,5 +1,9 @@
 <ul>
-  <li *ngFor="let group of groups" [simple-context]="simpleContext" [simple-context-payload]="group">{{group.title}}</li>
+  <li *ngFor="let group of groups"
+      [simple-context]="simpleContext"
+      [simple-context-payload]="group">
+    {{group.title}}
+  </li>
 </ul>
 
 <simple-context></simple-context>

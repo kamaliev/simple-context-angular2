@@ -1,6 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
-import {SimpleContextComponent} from "./simple-context/simple-context.component";
-import {SimpleContext} from "./simple-context/simple-context";
+import {SimpleContextComponent} from './simple-context/simple-context.component';
+import {SimpleContext} from './simple-context/simple-context';
 
 @Component({
     selector: 'app-root',
@@ -12,7 +12,7 @@ export class AppComponent {
 
     @ViewChild(SimpleContextComponent)
     set simpleContext(v: SimpleContextComponent) {
-        v.setItems(this.items);
+        v.setItems(this.menuItems);
         this._simpleContext = v;
     }
 
@@ -20,38 +20,26 @@ export class AppComponent {
         return this._simpleContext;
     }
 
-    items: Array<SimpleContext>;
+    menuItems: Array<SimpleContext>;
     groups: Array<any>;
 
     constructor() {
-        this.items = [
-            {
-                title: 'Save',
-                event: this.onSave
-            },
-            {
-                title: 'Edit',
-                event: this.onSave
-            }
+        this.menuItems = [
+            { title: 'Save', event: this.onSave },
+            { title: 'Edit', event: this.onSave }
         ];
 
         this.groups = [
-            {
-                id: 1,
-                title: 'Anton'
-            },
-            {
-                id: 2,
-                title: 'Stellarbit'
-            }
+            { id: 1, title: 'Bill' },
+            { id: 2, title: 'Murray' }
         ];
     }
 
-    onSave(e) {
-        console.log('onSave', e);
+    onSave(item) {
+        console.log('onSave', item);
     }
 
-    onEdit(e) {
-        console.log('onEdit', e);
+    onEdit(item) {
+        console.log('onEdit', item);
     }
 }

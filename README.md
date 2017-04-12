@@ -1,28 +1,98 @@
-# Context
+## About
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+This is simple context menu to Angular 2+
 
-## Development server
+## Npm install
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```sh
+npm install simple-context-angular2 --save
+```
 
-## Code scaffolding
+## How to use
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+1) Import module
 
-## Build
+```typescript
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+import {SimpleContextModule} from 'simple-context-angular2';
 
-## Running unit tests
+@NgModule({
+    ...
+    imports: [
+        ...
+        SimpleContextModule
+    ],
+    ...
+})
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Edit your template
 
-## Running end-to-end tests
+```html
+<ul>
+  <li *ngFor="let group of groups"
+      [simple-context]="simpleContext"
+      [simple-context-payload]="group">
+    {{group.title}}
+  </li>
+</ul>
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+<simple-context></simple-context>
+```
 
-## Further help
+3. Edit your component
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```typescript
+import {Component, ViewChild} from '@angular/core';
+import {SimpleContextComponent} from './simple-context/simple-context.component';
+import {SimpleContext} from './simple-context/simple-context';
+
+@Component({
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+    private _simpleContext;
+
+    @ViewChild(SimpleContextComponent)
+    set simpleContext(v: SimpleContextComponent) {
+        v.setItems(this.menuItems);
+        this._simpleContext = v;
+    }
+
+    get simpleContext() {
+        return this._simpleContext;
+    }
+
+    menuItems: Array<SimpleContext>;
+    groups: Array<any>;
+
+    constructor() {
+        this.menuItems = [
+            { title: 'Save', event: this.onSave },
+            { title: 'Edit', event: this.onSave }
+        ];
+
+        this.groups = [
+            { id: 1, title: 'Bill' },
+            { id: 2, title: 'Murray' }
+        ];
+    }
+
+    onSave(item) {
+        console.log('onSave', item);
+    }
+
+    onEdit(item) {
+        console.log('onEdit', item);
+    }
+}
+
+```
+
+## Test
+
+1. Clone this git
+2. npm install & npm start
+3. Open http://localhost:4200
