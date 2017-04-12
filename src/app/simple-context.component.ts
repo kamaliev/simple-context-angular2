@@ -49,7 +49,7 @@ import {SimpleContext} from './simple-context';
 export class SimpleContextComponent implements OnInit {
     @ViewChild('context') context: ElementRef;
 
-    private items: Array<SimpleContext>;
+    items: Array<SimpleContext>;
     payload: any;
 
     get document() {
