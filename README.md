@@ -44,8 +44,7 @@ import {SimpleContextModule} from 'simple-context-angular2';
 
 ```typescript
 import {Component, ViewChild} from '@angular/core';
-import {SimpleContextComponent} from './simple-context/simple-context.component';
-import {SimpleContext} from './simple-context/simple-context';
+import {SimpleContextComponent, SimpleContext} from 'simple-context-angular2';
 
 @Component({
     selector: 'app-root',
