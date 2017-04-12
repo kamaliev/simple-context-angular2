@@ -1,4 +1,4 @@
-import {NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {SimpleContextComponent} from './simple-context.component';
 import {SimpleContextDirective} from './simple-context.directive';
@@ -10,8 +10,7 @@ import {SimpleContextDirective} from './simple-context.directive';
         SimpleContextComponent,
         SimpleContextDirective
     ],
-    exports: [SimpleContextComponent, SimpleContextDirective],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    exports: [SimpleContextComponent, SimpleContextDirective]
 })
 export class SimpleContextModule {
 }

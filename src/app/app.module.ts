@@ -4,7 +4,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
-import {SimpleContextModule} from './simple-context/simple-context.module';
+import {SimpleContextModule} from "./simple-context.module";
 
 @NgModule({
     declarations: [
